@@ -1,0 +1,17 @@
+{
+  "hosting": [
+    {
+      "app": {
+        "project": "lela-client",
+        "target": "build",
+        "configuration": "production",
+        "path": "dist/lela-client"
+      },
+      "azureHosting": {
+        "subscription": "580509fd-28a4-49d3-be2a-e13d4e052349",
+        "resourceGroupName": "rg-lela",
+        "account": "stlela"
+      }
+    }
+  ]
+}

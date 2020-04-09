@@ -1,0 +1,75 @@
+<br/>
+<h1 align="center">Le ou La</h1>
+<br/>
+<div id="start" *ngIf="!showGame">
+    <div class="row">
+        <a [routerLink]="" (click)="onClickStart()">
+            <div class="centre-column">
+                <div class="card">Commencez</div>
+            </div>
+        </a>
+    </div>
+</div>
+
+<div id="game" *ngIf="showGame">
+    <div class="row">
+        <div class="centre-column">
+            <div class="card">{{ shownWord }}</div>
+        </div>
+    </div>
+
+    <br/><br/>
+
+    <div class="row">
+            
+        <div class="centre-column">
+            <a [routerLink]="" (click)="onClickLe()">
+                <div class="column" >
+                    <div id="le-div" [ngClass]="getClassLeCorrect()">
+                        <div class="card">Le</div>
+                    </div>
+                </div>
+            </a>
+            <a [routerLink]="" (click)="onClickLa()">
+                <div class="column">
+                    <div id="la-div" [ngClass]="getClassLaCorrect()">
+                        <div class="card">La</div>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <br/><br/><br/><br/>
+
+    <div class="row" *ngIf="showNextButton">
+        <div class="centre-column">
+            <a [routerLink]="" (click)="onClickNext()">
+                <div class="column">
+                    <div class="card">Next round</div>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <br/><br/><br/><br/>
+
+    <div class="row" *ngIf="gameFinished">
+        <div class="centre-column">
+            
+            <div class="column">
+                <div class="card">Score: {{ roundsAnsweredCorrectly }} / {{ roundsInGame }}</div>
+            </div>
+
+        </div>
+
+        <div class="centre-column">
+            <a [routerLink]="" (click)="onClickRestart()">
+                <div class="column">
+                    <div class="card">redémarrer</div>
+                </div>
+            </a>
+        </div>
+    </div>
+
+</div>
